@@ -186,11 +186,6 @@
                                                     aria-hidden="true"></span>
                                             </button>
 
-                                            <a href="{{ route('employees.show', $employee) }}"
-                                                class="btn btn-outline-secondary">
-                                                <i class="bi bi-eye me-2"></i>View Details
-                                            </a>
-
                                             <a href="{{ route('employees.index') }}" class="btn btn-outline-secondary">
                                                 <i class="bi bi-arrow-left me-2"></i>Back to List
                                             </a>

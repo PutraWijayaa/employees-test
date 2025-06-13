@@ -21,9 +21,9 @@ class EmployeeController extends Controller
     {
         $emps = Employee::get();
 
-        // $title = 'Delete User!';
-        // $text = "Are you sure you want to delete?";
-        // confirmDelete($title, $text);
+        $title = 'Delete?!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
 
         return view('employees.index', compact('emps'));
     }
@@ -62,8 +62,10 @@ class EmployeeController extends Controller
 
         $emp = Employee::create($data);
 
-        Redis::set('emp_' . $emp->nomor, $emp->toJson());
-        return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
+        // Redis::set('emp_' . $emp->nomor, $emp->toJson());
+
+        Alert::success('Success Title', 'Employee created successfully.');
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -101,8 +103,10 @@ class EmployeeController extends Controller
             $data['photo_upload_path'] = $url;
         }
         $employee->update($data);
-        $this->pushToRedis($employee);
-        return redirect()->route('employees.index')->with('success','Updated');
+        // $this->pushToRedis($employee);
+
+        Alert::success('Success Title', 'Success Message');
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -111,9 +115,9 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         $employee->delete();
-        Redis::del('emp_' . $employee->nomor);
+        // Redis::del('emp_' . $employee->nomor);
 
         Alert::success('Success Title', 'Success Message');
-        return back()->with('success','Deleted');
+        return back();
     }
 }

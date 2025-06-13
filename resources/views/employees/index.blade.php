@@ -85,14 +85,18 @@
                                     <i class="bi bi-pencil"></i>
                                 </a>
 
-                                <form action="{{ route('employees.destroy', $emp) }}" method="POST" class="d-inline"
+                                <a href="{{ route('employees.destroy', $emp) }}"
+                                                    class="btn btn-danger" data-confirm-delete="true"><i
+                                                        class="bi bi-trash"></i></a>
+
+                                <!-- <form action="{{ route('employees.destroy', $emp) }}" method="POST" class="d-inline"
                                     onsubmit="return confirm('Are you sure you want to delete {{ $emp->nama }}? This action cannot be undone.')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-outline-danger" title="Delete" type="submit">
                                         <i class="bi bi-trash"></i>
                                     </button>
-                                </form>
+                                </form> -->
                             </div>
                         </td>
                     </tr>

@@ -52,6 +52,7 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+      <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>

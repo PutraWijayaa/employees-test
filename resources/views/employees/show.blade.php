@@ -42,25 +42,11 @@
             </div>
 
             <!-- Quick Actions -->
-            <div class="card shadow-sm mt-3">
-                <div class="card-body">
-                    <h6 class="card-title">Quick Actions</h6>
-                    <div class="d-grid gap-2">
-                        <a href="{{ route('employees.edit', $employee) }}" class="btn btn-warning">
-                            <i class="bi bi-pencil me-2"></i>Edit Employee
-                        </a>
-                        <form action="{{ route('employees.destroy', $employee) }}" method="POST"
-                            onsubmit="return confirm('Are you sure you want to delete {{ $employee->nama }}? This action cannot be undone.')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger w-100">
-                                <i class="bi bi-trash me-2"></i>Delete Employee
-                            </button>
-                        </form>
-                        <a href="{{ route('employees.index') }}" class="btn btn-outline-secondary">
-                            <i class="bi bi-arrow-left me-2"></i>Back to List
-                        </a>
-                    </div>
+            <div class="mt-3">
+                <div class="d-grid gap-2">
+                    <a href="{{ route('employees.index') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-2"></i>Back to List
+                    </a>
                 </div>
             </div>
         </div>
